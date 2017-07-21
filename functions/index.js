@@ -90,10 +90,11 @@ exports.point = functions.https.onRequest((request, response) => {
     var tk = request.param('t');
 
     admin.database().ref("tokens").orderByKey().equalTo(tk).once("value", function (snapshot) {
-        admin.database().ref('/tokens/' + tk).child('seen').set(admin.database.ServerValue.TIMESTAMP);
+       
         var userData = snapshot.val();
         if (userData) {
             var distances = {};
+             admin.database().ref('/tokens/' + tk).child('seen').set(admin.database.ServerValue.TIMESTAMP);
             //////////////////
             if (request.param('lat') && request.param('lng') && request.param('alt')) {
 
@@ -137,8 +138,6 @@ exports.point = functions.https.onRequest((request, response) => {
                             loon: iloons[key]
                         };
 
-
-                       
                         response.send(resp);
                     });
 
