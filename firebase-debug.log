@@ -1,81 +1,90 @@
-[debug] [2017-07-21T00:58:39.887Z] ----------------------------------------------------------------------
-[debug] [2017-07-21T00:58:39.890Z] Command:      /usr/local/bin/node /usr/local/bin/firebase init
-[debug] [2017-07-21T00:58:39.890Z] CLI Version:  3.9.1
-[debug] [2017-07-21T00:58:39.890Z] Platform:     darwin
-[debug] [2017-07-21T00:58:39.890Z] Node Version: v6.10.3
-[debug] [2017-07-21T00:58:39.891Z] Time:         Thu Jul 20 2017 21:58:39 GMT-0300 (-03)
-[debug] [2017-07-21T00:58:39.891Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T02:12:02.443Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T02:12:02.446Z] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-07-21T02:12:02.447Z] CLI Version:  3.9.1
+[debug] [2017-07-21T02:12:02.447Z] Platform:     darwin
+[debug] [2017-07-21T02:12:02.447Z] Node Version: v6.10.3
+[debug] [2017-07-21T02:12:02.448Z] Time:         Thu Jul 20 2017 23:12:02 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:02.448Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-07-21T00:58:39.904Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] [2017-07-21T00:58:39.904Z] > authorizing via signed-in user
+[debug] [2017-07-21T02:12:02.462Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-21T02:12:02.462Z] > authorizing via signed-in user
+[debug] [2017-07-21T02:12:02.465Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
+ Thu Jul 20 2017 23:12:02 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:05.375Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T02:12:05.376Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
+ Thu Jul 20 2017 23:12:05 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:06.293Z] <<< HTTP RESPONSE 200
 [info] 
-     🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥     🔥🔥🔥     🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
-     🔥🔥        🔥🔥  🔥🔥     🔥🔥 🔥🔥       🔥🔥     🔥🔥  🔥🔥   🔥🔥  🔥🔥       🔥🔥
-     🔥🔥🔥🔥🔥🔥    🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥   🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥
-     🔥🔥        🔥🔥  🔥🔥    🔥🔥  🔥🔥       🔥🔥     🔥🔥 🔥🔥     🔥🔥       🔥🔥 🔥🔥
-     🔥🔥       🔥🔥🔥🔥 🔥🔥     🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥     🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
-
-You're about to initialize a Firebase project in this directory:
-
-  /Users/joaquin/Documents/pointaloon
-
+[info] === Deploying to 'pointaloon'...
 [info] 
-=== Project Setup
+[info] i  deploying database, functions, hosting
+[info] ✔  database: rules ready to deploy.
+[debug] [2017-07-21T02:12:09.106Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-07-21T02:12:09.108Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Thu Jul 20 2017 23:12:09 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:09.108Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Thu Jul 20 2017 23:12:09 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:10.625Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-07-21T02:12:10.805Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-07-21T02:12:10.807Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/pointaloon  
+ Thu Jul 20 2017 23:12:10 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:10.807Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/pointaloon/apiKeys  
+ Thu Jul 20 2017 23:12:10 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:13.399Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T02:12:13.402Z] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-07-21T02:12:13.402Z] CLI Version:  3.9.1
+[debug] [2017-07-21T02:12:13.402Z] Platform:     darwin
+[debug] [2017-07-21T02:12:13.402Z] Node Version: v6.10.3
+[debug] [2017-07-21T02:12:13.403Z] Time:         Thu Jul 20 2017 23:12:13 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:13.403Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-21T02:12:13.417Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-21T02:12:13.417Z] > authorizing via signed-in user
+[debug] [2017-07-21T02:12:13.420Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
+ Thu Jul 20 2017 23:12:13 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:16.994Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T02:12:16.995Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
+ Thu Jul 20 2017 23:12:16 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:19.628Z] <<< HTTP RESPONSE 200
 [info] 
-[info] First, let's associate this project directory with a Firebase project.
-[info] You can create multiple project aliases by running firebase use --add, 
-[info] but for now we'll just set up a default project.
+[info] === Deploying to 'pointaloon'...
 [info] 
-[debug] [2017-07-21T00:58:44.845Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-07-21T00:58:44.845Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OT9LbbamLZFY6pDdmFzmCCRFulfVcoZzQYsI5N_L9D8',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Thu Jul 20 2017 21:58:44 GMT-0300 (-03)
-[debug] [2017-07-21T00:58:52.892Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T00:58:52.896Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
- Thu Jul 20 2017 21:58:52 GMT-0300 (-03)
-[debug] [2017-07-21T00:58:55.976Z] <<< HTTP RESPONSE 200
-[info] 
-=== Database Setup
-[info] 
-[info] Firebase Realtime Database Rules allow you to define how your data should be
-[info] structured and when your data can be read from and written to.
-[info] 
-[debug] [2017-07-21T00:59:13.521Z] >>> HTTP REQUEST GET https://pointaloon.firebaseio.com/.settings/rules.json  
- Thu Jul 20 2017 21:59:13 GMT-0300 (-03)
-[debug] [2017-07-21T00:59:15.082Z] <<< HTTP RESPONSE 200
-[info] ✔  Database Rules for pointaloon have been downloaded to database.rules.json.
-[info] Future modifications to database.rules.json will update Database Rules when you run
-[info] firebase deploy.
-[info] 
-=== Functions Setup
-[info] 
-[info] A functions directory will be created in your project with a Node.js
-[info] package pre-configured. Functions can be deployed with firebase deploy.
-[info] 
-[debug] [2017-07-21T00:59:15.088Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-07-21T00:59:15.089Z] > authorizing via signed-in user
-[debug] [2017-07-21T00:59:15.089Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-07-21T00:59:15.090Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OT9LbbamLZFY6pDdmFzmCCRFulfVcoZzQYsI5N_L9D8',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Thu Jul 20 2017 21:59:15 GMT-0300 (-03)
-[debug] [2017-07-21T00:59:15.703Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T00:59:15.706Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
- Thu Jul 20 2017 21:59:15 GMT-0300 (-03)
-[debug] [2017-07-21T00:59:16.757Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T00:59:16.758Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
- Thu Jul 20 2017 21:59:16 GMT-0300 (-03)
-[debug] [2017-07-21T00:59:18.254Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T00:59:18.256Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pointaloon?updateMask=usageSettings { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
- Thu Jul 20 2017 21:59:18 GMT-0300 (-03)
-[debug] [2017-07-21T00:59:18.258Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pointaloon?updateMask=usageSettings { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
- Thu Jul 20 2017 21:59:18 GMT-0300 (-03)
-[info] ✔  Wrote functions/package.json
-[info] ✔  Wrote functions/index.js
-[debug] [2017-07-21T00:59:23.700Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T00:59:25.072Z] <<< HTTP RESPONSE 200
+[info] i  deploying database, functions, hosting
+[info] ✔  database: rules ready to deploy.
+[debug] [2017-07-21T02:12:21.681Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-07-21T02:12:21.682Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Thu Jul 20 2017 23:12:21 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:21.682Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Thu Jul 20 2017 23:12:21 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:25.524Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-07-21T02:12:25.971Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-07-21T02:12:25.973Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/pointaloon  
+ Thu Jul 20 2017 23:12:25 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:25.973Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/pointaloon/apiKeys  
+ Thu Jul 20 2017 23:12:25 GMT-0300 (-03)
+[debug] [2017-07-21T02:12:26.897Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T02:12:27.253Z] <<< HTTP RESPONSE 200
