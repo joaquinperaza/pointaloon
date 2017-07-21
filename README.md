@@ -22,12 +22,12 @@ Response: azimuth and altitude data for atenna in degrees, distance to the neare
 
 https://us-central1-pointaloon.cloudfunctions.net/updater
 
-/updater 
+/updater GET Request 
 Refresh baloons database
 
 https://us-central1-pointaloon.cloudfunctions.net/createToken?email=mymail@mydomain.com
 
-/createToken
+/createToken GET Request 
 Create API token for using Google Loon antenna tracker API, tokens without activity a long time period will be deleted
 Parameters:
 email=mail to bind with your token.
@@ -35,9 +35,9 @@ email=mail to bind with your token.
 Response: JSON with registered mail and assigned token.
 
 ### Futher improvements:
--Arduino code for a simple atenna tracker solution.
--Hardware BOM suggestion
--Ready to use solution kit
+- Arduino code for a simple atenna tracker solution.
+- Hardware BOM suggestion
+- Ready to use solution kit
 
 
 ### Thanks to:
