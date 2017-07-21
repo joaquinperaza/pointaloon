@@ -135,12 +135,11 @@ exports.point = functions.https.onRequest((request, response) => {
                             ant_azm: distances[key]['azimuth'],
                             distance: distances[key]['distance'],
                             loon: iloons[key]
-                        }
+                        };
 
 
-                        console.info(distances);
-                        console.warn('varesp');
-                        response.send(distances);
+                       
+                        response.send(resp);
                     });
 
             } else {
