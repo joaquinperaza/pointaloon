@@ -1,5 +1,6 @@
 //Google project Loon tracker
 //Programmed in Paysandú, UY by joaquinperaza, joaquin@peraza.uy
+//Open source tool for Google Loon project optimization
 
 // The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
 const functions = require('firebase-functions');
