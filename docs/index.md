@@ -4,6 +4,7 @@ We highly believe that project Loon implementation can be greatly improved by us
 Our software is open-source, so you can host your own loon tracker, however we have deployed a public API to ease this system implementation.
 
 ##### Project Loon Now:   
+Real-time map location of Google Loon Project balloons:   
 
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAphCQdE_HtyP7FboF16HDxl0vmtXZevCY&callback=initMap" async defer></script> 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -85,9 +86,9 @@ Refresh balloons database from flightradar24.com
 - Google Project Loon Team for their amazing work
 
 ### Disclaimer
-We are neither part nor supported with Google Project Loon, however we are pleased to work with everyone.
+We are neither part nor supported by Google Project Loon, however we are pleased to work with everyone.
 
-##### Contributors 
-Any contributor will be welcommed 
+#### Contributors 
+Any contribution will be welcommed 
 
  <script src="./script.js"></script>

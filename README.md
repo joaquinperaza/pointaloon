@@ -72,9 +72,9 @@ Refresh balloons database from flightradar24.com
 - Google Project Loon Team for their amazing work
 
 ### Disclaimer
-We are neither part nor supported with Google Project Loon, however we are pleased to work with everyone.
+We are neither part nor supported by Google Project Loon, however we are pleased to work with everyone.
 
-##### Contributors 
-Any contributor will be welcommed 
+#### Contributors 
+Any contribution will be welcommed 
 
 
