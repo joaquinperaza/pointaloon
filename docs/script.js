@@ -10,16 +10,7 @@
 $( "#target" ).click(redraw);
 
 
-          var image = {
-          url: 'https://pointaloon.firebaseapp.com/loon.png',
-          // This marker is 20 pixels wide by 32 pixels high.
-          size: new google.maps.Size(20, 32),
-          // The origin for this image is (0, 0).
-          origin: new google.maps.Point(0, 0),
-          // The anchor for this image is the base of the flagpole at (0, 32).
-          anchor: new google.maps.Point(0, 32)
-        };
-      
+          var image;
 
 var map;
     var markers = [];
@@ -67,6 +58,16 @@ map.fitBounds(bounds);
 
 
       function initMap() {
+          image =  = {
+          url: 'https://pointaloon.firebaseapp.com/loon.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+      
           
         map = new google.maps.Map(document.getElementById('map'), {
             disableDefaultUI: true,
@@ -308,7 +309,7 @@ map.fitBounds(bounds);
        
  
 
-    var updater = setInterval(redraw, 10000);
+    var updater = setInterval(redraw, 50000);
       
       
       
