@@ -45,7 +45,7 @@ var map;
 }
 
 //usage:
-readTextFile("http://us-central1-pointaloon.cloudfunctions.net/loons?t=map", function(text){
+readTextFile("https://us-central1-pointaloon.cloudfunctions.net/loons?t=map", function(text){
     var iloons = JSON.parse(text);
     
      for (iloon in iloons) {
