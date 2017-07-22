@@ -9,6 +9,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 var http = require('http');
 var calculate = require('azimuth');
+const cors = require('cors')({origin: true});
 
 admin.initializeApp(functions.config().firebase);
 
@@ -183,6 +184,8 @@ exports.point = functions.https.onRequest((request, response) => {
 
 
 exports.loons = functions.https.onRequest((request, response) => {
+     cors(request, response, () => {
+
       if(request.param('t')){
     var tk = request.param('t');
     
@@ -218,5 +221,6 @@ exports.loons = functions.https.onRequest((request, response) => {
 }else{
            response.send("400 BAD REQUEST, check your parameters");
      }
+     });
 });
 
