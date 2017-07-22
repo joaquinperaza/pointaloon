@@ -17,6 +17,7 @@ The API we provide is hosted at Google Firebase, remember you need to create an 
 
 ##### Create API Token  
 /createToken GET Request  
+
 <http://data.pointaloon.com/createToken?email=mymail@mydomain.com>  
   
 Create API token for using Google Loon antenna tracker API. 
@@ -31,6 +32,7 @@ Tokens without activity in a long time period will be deleted, calling /point pe
 
 ##### Point Antenna
 /point GET Request  
+
 <http://data.pointaloon.com/point?t=-KpXzvOkApAjugM8GgWe&lat=-5.4&lng=-80.7&alt=75>  
 
 Parameters required: 
@@ -49,6 +51,7 @@ For initial postioning you need to have a minimal connection to the network, the
 
 ##### Get live Loon ballons status
 /loons GET Request  
+
 <http://data.pointaloon.com/point?t=-KpXzvOkApAjugM8GgWe&lat=-5.4&lng=-80.7&alt=75>  
 
 Parameters required: 
@@ -66,6 +69,7 @@ For initial postioning you need to have a minimal connection to the network, the
 
 ##### Force-update Loon data  
 /updater GET Request  
+
 <http://data.pointaloon.com/updater>  
 Refresh balloons database from flightradar24.com   
 
