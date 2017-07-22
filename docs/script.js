@@ -15,8 +15,7 @@ var map;
       function initMap() {
           
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8,
+          
             styles: [
   {
     "elementType": "geometry",
@@ -240,6 +239,8 @@ datatype: "jsonp",
 data: {q: "select stuff", format: "json"},
 success: function(data) {
         var iloons = data;
+     var markers = [];//some array
+var bounds = new google.maps.LatLngBounds();
     
      for (iloon in iloons) {
          
@@ -250,9 +251,13 @@ success: function(data) {
             
            
           });
+         bounds.extend(marker.getPosition());
       
          
      }
+
+
+map.fitBounds(bounds);
    }
 }); 
           
