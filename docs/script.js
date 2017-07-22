@@ -58,7 +58,7 @@ map.fitBounds(bounds);
 
 
       function initMap() {
-          image =  = {
+          image = {
           url: 'https://pointaloon.firebaseapp.com/loon.png',
           // This marker is 20 pixels wide by 32 pixels high.
           size: new google.maps.Size(20, 32),
