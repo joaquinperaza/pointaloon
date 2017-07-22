@@ -6,10 +6,10 @@ Our software is open-source, so you can host your own loon tracker, however we h
 ##### Project Loon Now:   
 
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAphCQdE_HtyP7FboF16HDxl0vmtXZevCY&callback=initMap" async defer></script> 
- 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-<div id="map"></div>
+<div id="map' style="height: 300px; width: 100%; position: relative;"></div>
 
 
 ### API Usage
