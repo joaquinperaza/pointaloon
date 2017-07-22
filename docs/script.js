@@ -29,13 +29,7 @@ var map;
           anchor: new google.maps.Point(0, 32)
         };
       
-       var marker = new google.maps.Marker({
-            position: {lat: beach[1], lng: beach[2]},
-            map: map,
-            icon: image
-            
-           
-          });
+       
       
       
       function readTextFile(file, callback) {
