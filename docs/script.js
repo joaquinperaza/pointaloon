@@ -31,22 +31,25 @@ var map;
       
        
       
-      
-      function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
+      function getJSONP(url, success) {
+
+    var ud = '_' + +new Date,
+        script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0] 
+               || document.documentElement;
+
+    window[ud] = function(data) {
+        head.removeChild(script);
+        success && success(data);
+    };
+
+    script.src = url.replace('callback=?', 'callback=' + ud);
+    head.appendChild(script);
+
 }
 
-//usage:
-readTextFile("https://us-central1-pointaloon.cloudfunctions.net/loons?t=map", function(text){
-    var iloons = JSON.parse(text);
+getJSONP('https://us-central1-pointaloon.cloudfunctions.net/loons?t=map', function(data){
+       var iloons = JSON.parse(data);
     
      for (iloon in iloons) {
          
@@ -62,9 +65,9 @@ readTextFile("https://us-central1-pointaloon.cloudfunctions.net/loons?t=map", fu
      }
     
     
-    
-    
-});
+});  
+
+   
       
       
       
