@@ -9,7 +9,7 @@ Our software is open-source, so you can host your own loon tracker, however we h
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-<div id="map' style="height: 300px; width: 100%; position: relative;"></div>
+<div id="map" style="height:300px;width:100%;position:relative;"></div>
 
 
 ### API Usage
