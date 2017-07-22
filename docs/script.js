@@ -7,11 +7,55 @@
   ga('create', 'UA-67253903-5', 'auto');
   ga('send', 'pageview');
 
-
+$( "#target" ).click(redraw);
 
 
 
 var map;
+    var markers = [];
+  var updater = setInterval(redraw, 5000);
+
+function redraw() {
+      setMapOnAll(null);
+    markers = [];
+         
+          $.ajax({
+url: "https://us-central1-pointaloon.cloudfunctions.net/loons?t=map",
+jsonp: "callback",
+datatype: "jsonp",
+data: {q: "select stuff", format: "json"},
+success: function(data) {
+        var iloons = data;
+ //some array
+var bounds = new google.maps.LatLngBounds();
+    
+     for (iloon in iloons) {
+         
+          markers.push(new google.maps.Marker({
+            position: {lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']},
+            map: map,
+            icon: image})
+                      );
+         
+         
+         bounds.extend(marker.getPosition());
+      
+         
+     }
+
+
+map.fitBounds(bounds);
+   }
+}); 
+          
+      
+    
+    
+    
+  
+}
+
+
       function initMap() {
           
         map = new google.maps.Map(document.getElementById('map'), {
@@ -239,18 +283,18 @@ datatype: "jsonp",
 data: {q: "select stuff", format: "json"},
 success: function(data) {
         var iloons = data;
-     var markers = [];//some array
+ //some array
 var bounds = new google.maps.LatLngBounds();
     
      for (iloon in iloons) {
          
-          var marker = new google.maps.Marker({
+          markers.push(new google.maps.Marker({
             position: {lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']},
             map: map,
-            icon: image
-            
-           
-          });
+            icon: image})
+                      );
+         
+         
          bounds.extend(marker.getPosition());
       
          
@@ -269,3 +313,10 @@ map.fitBounds(bounds);
       
       
       }
+
+   function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+  
