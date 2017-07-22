@@ -10,10 +10,20 @@
 $( "#target" ).click(redraw);
 
 
+          var image = {
+          url: 'https://pointaloon.firebaseapp.com/loon.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+      
 
 var map;
     var markers = [];
-  var updater = setInterval(redraw, 5000);
+ 
 
 function redraw() {
       setMapOnAll(null);
@@ -38,7 +48,7 @@ var bounds = new google.maps.LatLngBounds();
                       );
          
          
-         bounds.extend(marker.getPosition());
+         bounds.extend({lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']});
       
          
      }
@@ -265,16 +275,6 @@ map.fitBounds(bounds);
 ]
         });
       
-          var image = {
-          url: 'https://pointaloon.firebaseapp.com/loon.png',
-          // This marker is 20 pixels wide by 32 pixels high.
-          size: new google.maps.Size(20, 32),
-          // The origin for this image is (0, 0).
-          origin: new google.maps.Point(0, 0),
-          // The anchor for this image is the base of the flagpole at (0, 32).
-          anchor: new google.maps.Point(0, 32)
-        };
-      
      
           $.ajax({
 url: "https://us-central1-pointaloon.cloudfunctions.net/loons?t=map",
@@ -295,7 +295,7 @@ var bounds = new google.maps.LatLngBounds();
                       );
          
          
-         bounds.extend(marker.getPosition());
+         bounds.extend({lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']});
       
          
      }
@@ -308,7 +308,7 @@ map.fitBounds(bounds);
        
  
 
-   
+    var updater = setInterval(redraw, 10000);
       
       
       
