@@ -48,7 +48,7 @@ var map;
 
 }
 
-getJSONP('https://us-central1-pointaloon.cloudfunctions.net/loons?t=map', function(data){
+getJSONP('https://us-central1-pointaloon.cloudfunctions.net/loons?t=map&callback=?', function(data){
        var iloons = JSON.parse(data);
     
      for (iloon in iloons) {
