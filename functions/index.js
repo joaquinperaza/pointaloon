@@ -50,8 +50,11 @@ exports.createToken = functions.https.onRequest((request, response) => {
 
 
 exports.updater = functions.https.onRequest((request, response) => {
+   
+    
     function parsetodb(string) {
         var parsed = JSON.parse(string);
+        admin.database().ref('/loons/').remove();
         for (var attributename in parsed) {
 
             if (parsed[attributename].hasOwnProperty(0) && parsed[attributename].hasOwnProperty(1) && parsed[attributename].hasOwnProperty(2) && parsed[attributename].hasOwnProperty(10) && parsed[attributename].hasOwnProperty(16)) {
@@ -64,9 +67,14 @@ exports.updater = functions.https.onRequest((request, response) => {
                     track: parsed[attributename][3],
                     seen: parsed[attributename][10],
                 };
-                var pushed = admin.database().ref('/loons/' + parsed[attributename][16]).set(baloon);
+                if (baloon.name==''){
+                    ballon.name = 'NONAME'+String(Math.random() * (99 - 10) + 10);
+                }
+                var pushed = admin.database().ref('/loons/' + baloon.name).set(baloon);
             }
         }
+        
+        
         response.send("200");
     }
 
@@ -91,7 +99,9 @@ exports.updater = functions.https.onRequest((request, response) => {
 
 
 exports.point = functions.https.onRequest((request, response) => {
+     if(request.param('t')){
     var tk = request.param('t');
+    
 
     admin.database().ref("tokens").orderByKey().equalTo(tk).once("value", function (snapshot) {
        
@@ -99,9 +109,20 @@ exports.point = functions.https.onRequest((request, response) => {
         if (userData) {
             var distances = {};
              admin.database().ref('/tokens/' + tk).child('seen').set(admin.database.ServerValue.TIMESTAMP);
+            
+            
+            
             //////////////////
             if (request.param('lat') && request.param('lng') && request.param('alt')) {
-
+                 admin.database().ref('/tokens/' + tk).child('log').push().set(
+                     {
+                                lat: parseFloat(request.param('lat')),
+                                lng: parseFloat(request.param('lng')),
+                                alt: parseFloat(request.param('alt')),
+                                when: admin.database.ServerValue.TIMESTAMP
+                            }
+                
+            );
                 var query = admin.database().ref("loons").orderByKey();
                 query.once("value")
                     .then(function (snapshot) {
@@ -144,6 +165,7 @@ exports.point = functions.https.onRequest((request, response) => {
 
                         response.send(resp);
                     });
+                
 
             } else {
                 response.send("400 BAD REQUEST, check your parameters and token authenticity");
@@ -154,5 +176,47 @@ exports.point = functions.https.onRequest((request, response) => {
         }
     });
 
-
+     }else{
+           response.send("400 BAD REQUEST, check your parameters");
+     }
 });
+
+
+exports.loons = functions.https.onRequest((request, response) => {
+      if(request.param('t')){
+    var tk = request.param('t');
+    
+
+    admin.database().ref("tokens").orderByKey().equalTo(tk).once("value", function (snapshot) {
+       
+        var userData = snapshot.val();
+        if (userData) {
+        
+             admin.database().ref('/tokens/' + tk).child('seen').set(admin.database.ServerValue.TIMESTAMP);
+            
+            
+            
+            //////////////////
+            
+                var query = admin.database().ref("loons").orderByKey();
+                query.once("value")
+                    .then(function (snapshot) {
+                        var iloons = snapshot.val();
+                        
+                       
+
+                        response.send(iloons);
+                    });
+                
+
+            //////////////
+        } else {
+            response.send("403 FORBIDDEN, check your token authenticity");
+        }
+    });
+
+}else{
+           response.send("400 BAD REQUEST, check your parameters");
+     }
+});
+
