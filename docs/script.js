@@ -7,7 +7,22 @@
   ga('create', 'UA-67253903-5', 'auto');
   ga('send', 'pageview');
 
-$( "#target" ).click(redraw);
+
+$( "#button" ).click(function() {
+    var query = document.getElementById("email").value;
+      $.ajax({
+url: "https://us-central1-pointaloon.cloudfunctions.net/createToken?email="+query,
+jsonp: "callback",
+datatype: "jsonp",
+data: {q: "select stuff", format: "json"},
+success: function(data) {
+        document.getElementById("token").innerHTML=data.token;
+    $( "#button" ).prop( "disabled", true );
+ //some array
+   }
+}); 
+ 
+});
 
 
           var image;
@@ -17,8 +32,8 @@ var map;
  
 
 function redraw() {
-      setMapOnAll(null);
-    markers = [];
+      
+    var markers2 = [];
          
           $.ajax({
 url: "https://us-central1-pointaloon.cloudfunctions.net/loons?t=map",
@@ -28,24 +43,25 @@ data: {q: "select stuff", format: "json"},
 success: function(data) {
         var iloons = data;
  //some array
-var bounds = new google.maps.LatLngBounds();
+
     
      for (iloon in iloons) {
          
-          markers.push(new google.maps.Marker({
+          markers2.push(new google.maps.Marker({
             position: {lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']},
             map: map,
             icon: image})
                       );
          
-         
-         bounds.extend({lat: iloons[iloon]['lat'], lng: iloons[iloon]['lng']});
-      
-         
      }
+     
+    setMapOnAll(null);
+    markers = [];
+    markers= markers2;
+    markers2 = [];
+    
 
 
-map.fitBounds(bounds);
    }
 }); 
           
@@ -59,13 +75,8 @@ map.fitBounds(bounds);
 
       function initMap() {
           image = {
-          url: 'https://pointaloon.firebaseapp.com/loon.png',
-          // This marker is 20 pixels wide by 32 pixels high.
-          size: new google.maps.Size(20, 32),
-          // The origin for this image is (0, 0).
-          origin: new google.maps.Point(0, 0),
-          // The anchor for this image is the base of the flagpole at (0, 32).
-          anchor: new google.maps.Point(0, 32)
+          url: 'https://pointaloon.firebaseapp.com/loon.png'
+         
         };
       
           

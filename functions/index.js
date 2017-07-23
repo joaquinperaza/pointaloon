@@ -15,6 +15,7 @@ admin.initializeApp(functions.config().firebase);
 
 
 exports.createToken = functions.https.onRequest((request, response) => {
+     cors(request, response, () => {
     function validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
@@ -42,15 +43,17 @@ exports.createToken = functions.https.onRequest((request, response) => {
 
     } else {
         response.send("400 BAD REQUEST, check your parameters");
+        
     }
 
 
 
-
+    });
 });
 
 
 exports.updater = functions.https.onRequest((request, response) => {
+  
    
     
     function parsetodb(string) {
@@ -100,6 +103,7 @@ exports.updater = functions.https.onRequest((request, response) => {
 
 
 exports.point = functions.https.onRequest((request, response) => {
+     cors(request, response, () => {
      if(request.param('t')){
     var tk = request.param('t');
     
@@ -181,6 +185,7 @@ exports.point = functions.https.onRequest((request, response) => {
            response.send("400 BAD REQUEST, check your parameters");
      }
 });
+        });
 
 
 exports.loons = functions.https.onRequest((request, response) => {

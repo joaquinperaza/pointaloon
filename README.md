@@ -1,4 +1,4 @@
-# Point A Loon
+[Point a Loon](http://pointaloon.com)  
 
 We highly believe that project Loon implementation can be greatly improved by using directional LTE atennas so we developed a Loon tracker and antenna tracker, with this you can get a DIY antenna tracker following the nearest balloon to your location, further improvemnts comming! 
 Our software is open-source, so you can host your own loon tracker, however we have deployed a public API to ease this system implementation.
@@ -6,7 +6,10 @@ Our software is open-source, so you can host your own loon tracker, however we h
 ### API Usage
 The API we provide is hosted at Google Firebase, remember you need to create an API token first.  
 
-##### Create API Token  
+##### Create API Token 
+
+[Create in our website!](http://pointaloon.com)  
+
 /createToken GET Request  
 <http://data.pointaloon.com/createToken?email=mymail@mydomain.com>  
   
@@ -40,7 +43,8 @@ For initial postioning you need to have a minimal connection to the network, the
 
 ##### Get live Loon ballons status
 /loons GET Request  
-<http://data.pointaloon.com/point?t=-KpXzvOkApAjugM8GgWe&lat=-5.4&lng=-80.7&alt=75>  
+
+<http://data.pointaloon.com/loons?t=-KpXzvOkApAjugM8GgWe>  
 
 Parameters required: 
 - t=API token  
@@ -49,16 +53,15 @@ Response: JSON with all objects Loon detected, each object include callsign,alti
 This also will update your token last activity. 
 
 Example:  
-`{"ant_alt":-13.044651036040841, "ant_azm":314.3787496140375, "distance":2966056.5460053235, "loon":{"alt":15788.639494763536, "lat":-11.8075,"lng":-76.2704, "name":"HBAL941","seen":1500638350, "speed":15,"track":121}  
+`{"HBAL020":{"alt":16093.439485009936,"lat":-6.3734,"lng":-78.456,"name":"HBAL020","seen":1500760514,"speed":7,"track":203}, "HBAL044":{"alt":17708.87943331586,"lat":-3.6557,"lng":-61.919,"name":"HBAL044","seen":1500760515,"speed":16,"track":119}, "HBAL051":{"alt":15819.119493788176,"lat":-0.478,"lng":37.6499,"name":"HBAL051","seen":1500760511,"speed":6,"track":270}...
 }`  
-This also will update your token last activity. 
-For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.
-
+This also will update your token last activity.
 
 ##### Force-update Loon data  
-/updater GET Request  
-<http://data.pointaloon.com/updater>  
-Refresh balloons database from flightradar24.com   
+~~/updater GET Request~~  
+~~http://data.pointaloon.com/updater~~   
+Refresh balloons database from flightradar24.com 
+Deprecated since our server call it automatically.
 
 ### Further improvements:
 - Arduino code for a DIY Loon tracker
@@ -74,7 +77,7 @@ Refresh balloons database from flightradar24.com
 ### Disclaimer
 We are neither part nor supported by Google Project Loon, however we are pleased to work with everyone.
 
-#### Contributors 
+### Contributors 
 Any contribution will be welcommed 
 
 
