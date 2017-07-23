@@ -19,7 +19,7 @@
        
         {% for p in site.pages %}
         {% if p.title %}
-        	<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+        	<a href="{{ site.baseurl }}{{ p.url }}" class="btn">{{ p.title }}</a>
         {% endif %}
         {% endfor %}
    
