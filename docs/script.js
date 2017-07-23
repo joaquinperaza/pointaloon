@@ -16,8 +16,12 @@ jsonp: "callback",
 datatype: "jsonp",
 data: {q: "select stuff", format: "json"},
 success: function(data) {
-        document.getElementById("token").innerHTML="Succeed! "data.token;
-    $( "#button" ).prop( "disabled", true );
+    if(data.token){document.getElementById("token").innerHTML="🎈Happy tracking!:🎈 " + data.token;
+    $( "#button" ).prop( "disabled", true );}
+    else {
+        document.getElementById("token").innerHTML="Something went wrong 😅";
+    }
+        
  //some array
    }
 }); 
