@@ -1,7 +1,7 @@
 # [Point a Loon](http://pointaloon.com)  
 
 We highly believe that project Loon implementation can be greatly improved by using directional LTE atennas so we developed a Loon tracker and antenna tracker, with this you can get a DIY antenna tracker following the nearest balloon to your location, further improvemnts comming! 
-Our software is open-source, so you can host your own loon tracker, however we have deployed a public API to ease this system implementation.
+Our software is open-source, so you can host your own loon tracker; however, we have deployed a public API to ease this system implementation.
 
 ### API Usage
 The API we provide is hosted at Google Firebase, remember you need to create an API token first.  
@@ -78,7 +78,7 @@ Deprecated since our server call it automatically.
 - Google Project Loon Team for their amazing work
 
 ### Disclaimer
-We are neither part nor supported by Google Project Loon, however we are pleased to work with everyone.
+We are neither part nor supported by Google Project Loon; furthermore, we are pleased to work with everyone.
 
 ### Contributors 
 Any contribution will be welcommed 

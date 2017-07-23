@@ -1,7 +1,7 @@
 ### Home
 
 We highly believe that project Loon implementation can be greatly improved by using directional LTE atennas so we developed a Loon tracker and antenna tracker, with this you can get a DIY antenna tracker following the nearest balloon to your location, further improvemnts comming! 
-Our software is open-source, so you can host your own loon tracker, however we have deployed a public API to ease this system implementation.
+Our software is open-source, so you can host your own loon tracker; however, we have deployed a public API to ease this system implementation.
 
 ##### Project Loon Now:   
 Real-time map location of Google Loon Project balloons:   
@@ -80,7 +80,7 @@ Deprecated since our server call it automatically.
 - Google Project Loon Team for their amazing work
 
 ### Disclaimer
-We are neither part nor supported by Google Project Loon, however we are pleased to work with everyone.
+We are neither part nor supported by Google Project Loon; furthermore, we are pleased to work with everyone.
 
 ### Contributors 
 Any contribution will be welcommed 
