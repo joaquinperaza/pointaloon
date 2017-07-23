@@ -1,4 +1,4 @@
-{% include nav.html}
+{% include nav.html %}
     
 # Point A Loon
 
