@@ -16,7 +16,7 @@ jsonp: "callback",
 datatype: "jsonp",
 data: {q: "select stuff", format: "json"},
 success: function(data) {
-        document.getElementById("token").innerHTML=data.token;
+        document.getElementById("token").innerHTML="Succeed! "data.token;
     $( "#button" ).prop( "disabled", true );
  //some array
    }
