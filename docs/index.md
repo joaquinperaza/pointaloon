@@ -1,4 +1,4 @@
-# Point A Loon
+### Home
 
 We highly believe that project Loon implementation can be greatly improved by using directional LTE atennas so we developed a Loon tracker and antenna tracker, with this you can get a DIY antenna tracker following the nearest balloon to your location, further improvemnts comming! 
 Our software is open-source, so you can host your own loon tracker, however we have deployed a public API to ease this system implementation.
