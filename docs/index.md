@@ -18,9 +18,9 @@ Real-time map location of Google Loon Project balloons:
 The API we provide is hosted at Google Firebase, remember you need to create an API token first.  
 
 ##### API Token generator 
-Get a toke to use our hosted API.  
+Get a token to use our hosted API.  
 Email: 
-<input id="email" type="text" name="FirstName" placeholder="youremail@domain.com">
+<input id="email" type="text" name="FirstName" placeholder="email@domain.com">
 <input id="button" type="submit" value="Generate">
 
 <div id="token"></div>
@@ -42,8 +42,8 @@ Response: JSON with desired azimuth and altitude data for atenna in degrees, dis
 
 Example:  
 `{"ant_alt":-13.044651036040841, "ant_azm":314.3787496140375, "distance":2966056.5460053235, "loon":{"alt":15788.639494763536, "lat":-11.8075,"lng":-76.2704, "name":"HBAL941","seen":1500638350, "speed":15,"track":121}  
-}`  
-This also will update your token last activity. 
+}`   
+This also will update your token last activity.   
 For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.  
 
 ##### Get live Loon ballons status
