@@ -6,7 +6,7 @@ Our software is open-source, so you can host your own loon tracker, however we h
 ##### Project Loon Now:   
 Real-time map location of Google Loon Project balloons:   
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAphCQdE_HtyP7FboF16HDxl0vmtXZevCY&callback=initMap" async defer></script> 
+ 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
 
@@ -86,4 +86,5 @@ We are neither part nor supported by Google Project Loon, however we are pleased
 Any contribution will be welcommed 
 
  <script src="./script.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAphCQdE_HtyP7FboF16HDxl0vmtXZevCY&callback=initMap" async defer></script> 
  
