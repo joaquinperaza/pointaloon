@@ -44,7 +44,7 @@ Example:
 This also will update your token last activity. 
 For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.  
 
-##### Get live Loon ballons status
+##### Get live Loon balloons status
 /loons GET Request  
 
 <http://data.pointaloon.com/loons?t=-KpXzvOkApAjugM8GgWe>  
