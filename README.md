@@ -8,9 +8,10 @@ The API we provide is hosted at Google Firebase, remember you need to create an 
 
 ##### Create API Token 
 
+Create API token for using Google Loon antenna tracker API.  
+
 [Create in our website!](http://pointaloon.com)  
 
-Create API token for using Google Loon antenna tracker API.  
 
 /createToken GET Request  
 <http://data.pointaloon.com/createToken?email=mymail@mydomain.com>  

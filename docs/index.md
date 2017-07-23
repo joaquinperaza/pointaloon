@@ -1,5 +1,3 @@
-{% include nav.html %}
-    
 # Point A Loon
 
 We highly believe that project Loon implementation can be greatly improved by using directional LTE atennas so we developed a Loon tracker and antenna tracker, with this you can get a DIY antenna tracker following the nearest balloon to your location, further improvemnts comming! 
@@ -20,6 +18,7 @@ Real-time map location of Google Loon Project balloons:
 The API we provide is hosted at Google Firebase, remember you need to create an API token first.  
 
 ##### API Token generator 
+Get a toke to use our hosted API.  
 Email: 
 <input id="email" type="text" name="FirstName" placeholder="youremail@domain.com">
 <input id="button" type="submit" value="Generate">
