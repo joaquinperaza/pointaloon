@@ -85,6 +85,6 @@ We are neither part nor supported by Google Project Loon; furthermore, we are pl
 ### Contributors 
 Any contribution will be welcommed 
 
- <script src="./script.js"></script>
+ <script src="https://pointaloon.firebaseapp.com/script.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAphCQdE_HtyP7FboF16HDxl0vmtXZevCY&callback=initMap" async defer></script> 
  

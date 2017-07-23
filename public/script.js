@@ -80,7 +80,8 @@ function redraw() {
 
 function initMap() {
     image = {
-        url: 'https://pointaloon.firebaseapp.com/gif/loon.gif'
+        url: 'https://pointaloon.firebaseapp.com/gif/loon.gif',
+        scaledSize: new google.maps.Size(32, 85)
 
     };
 
