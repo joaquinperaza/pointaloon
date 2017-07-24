@@ -30,10 +30,11 @@ var markers = [];
 
 
 function redraw() {
-
+    
     var markers2 = [];
-
-    $.ajax({
+   
+ 
+            $.ajax({
         url: "https://us-central1-pointaloon.cloudfunctions.net/loons?t=map",
         jsonp: "callback",
         datatype: "jsonp",
@@ -69,10 +70,7 @@ function redraw() {
 
         }
     });
-
-
-
-
+    
 
 
 }
@@ -80,8 +78,8 @@ function redraw() {
 
 function initMap() {
     image = {
-        url: 'https://pointaloon.firebaseapp.com/gif/loon.gif',
-        scaledSize: new google.maps.Size(32, 85)
+        url: 'https://pointaloon.firebaseapp.com/gif/loo.gif',
+        scaledSize: new google.maps.Size(18.286, 48.57)
 
     };
 
@@ -336,7 +334,7 @@ function initMap() {
 
 
 
-    var updater = setInterval(redraw, 50000);
+    var updater = setInterval(redraw, 10000);
 
 
 

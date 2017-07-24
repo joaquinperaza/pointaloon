@@ -61,8 +61,8 @@ Example:
 This also will update your token last activity.
 
 ##### Force-update Loon data  
-~~/updater GET Request~~  
-~~http://data.pointaloon.com/updater~~   
+~~/update GET Request~~  
+~~http://data.pointaloon.com/update~~   
 Refresh balloons database from flightradar24.com 
 Deprecated since our server call it automatically.
 
