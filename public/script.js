@@ -95,12 +95,7 @@ function redraw() {
 
 
 function initMap() {
-    image = {
-        url: 'https://pointaloon.firebaseapp.com/gif/loo.gif',
-        scaledSize: new google.maps.Size(18.286, 48.57)
-
-    };
-
+  
 
     map = new google.maps.Map(document.getElementById('map'), {
         disableDefaultUI: true,
@@ -308,9 +303,17 @@ function initMap() {
   }
 ]
     });
+    
+function draw(){
+google.maps.event.addListenerOnce(map, 'idle', function(){
+      image = {
+        url: 'https://pointaloon.firebaseapp.com/gif/loo.gif',
+        scaledSize: new google.maps.Size(18.286, 48.57)
 
+    };
 
-    $.ajax({
+    // do something only the first time the map is loaded
+     $.ajax({
         url: "https://us-central1-pointaloon.cloudfunctions.net/loons?t=map",
         jsonp: "callback",
         datatype: "jsonp",
@@ -349,13 +352,18 @@ function initMap() {
         }
     });
     
-
-     
-
-
-
-
     var updater = setInterval(redraw, 10000);
+    ///
+});
+}
+   
+     draw();
+
+var updater = setInterval(redraw, 10000);
+    setTimeout(draw,8000);
+
+
+
 
 $.getJSON('http://ip-api.com/json?callback=?', function(data) {
         $.ajax({

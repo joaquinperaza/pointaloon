@@ -1,0 +1,110 @@
+[debug] [2017-07-25T11:39:25.281Z] ----------------------------------------------------------------------
+[debug] [2017-07-25T11:39:25.283Z] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-07-25T11:39:25.284Z] CLI Version:  3.9.1
+[debug] [2017-07-25T11:39:25.284Z] Platform:     darwin
+[debug] [2017-07-25T11:39:25.284Z] Node Version: v6.10.3
+[debug] [2017-07-25T11:39:25.284Z] Time:         Tue Jul 25 2017 08:39:25 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:25.284Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-25T11:39:25.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-25T11:39:25.297Z] > authorizing via signed-in user
+[debug] [2017-07-25T11:39:25.299Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-25T11:39:25.299Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OT9LbbamLZFY6pDdmFzmCCRFulfVcoZzQYsI5N_L9D8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Jul 25 2017 08:39:25 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:29.224Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-25T11:39:29.232Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
+ Tue Jul 25 2017 08:39:29 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:31.664Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-25T11:39:31.665Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
+ Tue Jul 25 2017 08:39:31 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:32.568Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'pointaloon'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] ✔  database: rules ready to deploy.
+[debug] [2017-07-25T11:39:34.765Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7",
+    "azimuth": "~0.1.0",
+    "cors": "~2.8.4"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-07-25T11:39:34.767Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Tue Jul 25 2017 08:39:34 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:34.768Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Tue Jul 25 2017 08:39:34 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:36.263Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-07-25T11:39:36.433Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-07-25T11:39:36.434Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/pointaloon  
+ Tue Jul 25 2017 08:39:36 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:36.436Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/pointaloon/apiKeys  
+ Tue Jul 25 2017 08:39:36 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:37.397Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-25T11:39:37.811Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2017-07-25T11:39:38.563Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/pointaloon/configs  
+ Tue Jul 25 2017 08:39:38 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:39.341Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (3.41 KB) for uploading
+[debug] [2017-07-25T11:39:40.266Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.pointaloon.appspot.com  
+ Tue Jul 25 2017 08:39:40 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:41.069Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-25T11:39:41.070Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.pointaloon.appspot.com/o?uploadType=media&name=firebase-functions-source ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 3487,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/f3/f84x0w8s44dcrk_tk579_rjw0000gn/T/firebase-functions-4439747ZOd8U5kl11.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 3487 } 
+ Tue Jul 25 2017 08:39:41 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:42.195Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting: preparing public directory for upload...
+[debug] [2017-07-25T11:39:42.260Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/pointaloon/uploads/-KptXthgCqYzDq3C-N8F?fileCount=22&message=  
+ Tue Jul 25 2017 08:39:42 GMT-0300 (-03)
+[debug] [2017-07-25T11:39:48.369Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-25T11:39:48.369Z] [hosting] .tgz uploaded successfully, waiting for extraction
