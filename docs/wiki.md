@@ -16,8 +16,8 @@ Response: JSON with registered mail and assigned token.
 
 Example:  
 `{"token":"-Kp_R2BLaamqXTruCE-o","email":"youremail@domain.com"}`  
-Tokens without activity in a long time period will be deleted, calling /point periodically will prevent that.
-
+Tokens without activity in a long time period will be deleted, calling /point periodically will prevent that.   
+Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).  
 ### Read object loon
 Object loon are the interface to provide balloon data.  
 Our /loons GET Request provide a collection of loon objects from the active balloons at the sky.
@@ -34,7 +34,7 @@ Properties:
 - speed: balloon speed in knots
 - track: balloon course in degrees from north
 
-
+Note: to avoid CORS problem use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).
 
 ### Antenna pointing data
 /point GET Request will return the information for connecting to the nearest balloon  
@@ -54,3 +54,4 @@ Example:
 }`   
 This also will update your token last activity.   
 For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.  
+Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).  

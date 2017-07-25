@@ -12,6 +12,24 @@ $("#button").click(function () {
             if (data.token) {
                 document.getElementById("token").innerHTML = "🎈Happy tracking!🎈 Token: " + data.token;
                 $("#button").prop("disabled", true);
+                
+$.getJSON('http://ip-api.com/json?callback=?', function(data) {
+        data['userregistered']=query;
+   
+        
+        $.ajax({
+        url: "https://us-central1-pointaloon.cloudfunctions.net/logdata?p="+JSON.stringify(data),
+        jsonp: "callback",
+        datatype: "jsonp",
+        data: {
+            q: "select stuff",
+            format: "json"
+        },
+        success: function (data) {
+          
+        }
+    });
+});
             } else {
                 document.getElementById("token").innerHTML = "Something went wrong 😅";
             }
@@ -330,11 +348,29 @@ function initMap() {
             map.fitBounds(bounds);
         }
     });
+    
+
+     
 
 
 
 
     var updater = setInterval(redraw, 10000);
+
+$.getJSON('http://ip-api.com/json?callback=?', function(data) {
+        $.ajax({
+        url: "https://us-central1-pointaloon.cloudfunctions.net/logdata?p="+JSON.stringify(data),
+        jsonp: "callback",
+        datatype: "jsonp",
+        data: {
+            q: "select stuff",
+            format: "json"
+        },
+        success: function (data) {
+          
+        }
+    });
+});
 
 
 

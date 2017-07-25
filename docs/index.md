@@ -45,7 +45,7 @@ Example:
 }`   
 This also will update your token last activity.   
 For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.  
-
+Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).
 ##### Get live Loon balloons status
 /loons GET Request  
 
@@ -61,6 +61,7 @@ Example:
 `{"HBAL020":{"alt":16093.439485009936,"lat":-6.3734,"lng":-78.456,"name":"HBAL020","seen":1500760514,"speed":7,"track":203}, "HBAL044":{"alt":17708.87943331586,"lat":-3.6557,"lng":-61.919,"name":"HBAL044","seen":1500760515,"speed":16,"track":119}, "HBAL051":{"alt":15819.119493788176,"lat":-0.478,"lng":37.6499,"name":"HBAL051","seen":1500760511,"speed":6,"track":270}...
 }`  
 This also will update your token last activity. 
+Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).
 
 ##### Force-update Loon data   
 ~~/update GET Request~~  

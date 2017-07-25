@@ -3,12 +3,25 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public",
-    "rewrites": [
+    "public": "public"
+      ,
+      
+      "headers": [ {
+  "source" : "*/point*",
+  "headers" : [ {
+    "key" : "Access-Control-Allow-Origin",
+    "value" : "*"
+} ]
+}],
+    "redirects": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/point",
+        "destination": "https://us-central1-pointaloon.cloudfunctions.net/point", 
+          "type": 301
       }
     ]
+      
+      
+      
   }
 }

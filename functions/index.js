@@ -180,7 +180,7 @@ exports.point = functions.https.onRequest((request, response) => {
                         admin.database().ref("/parameters/updated").once("value", function (last) {
 
 
-                            if ((Date.now() - last.val()) > 5000) {
+                            if ((Date.now() - last.val()) > 9000) {
                                 admin.database().ref('/parameters/').child('queue').remove();
                                 admin.database().ref('/parameters/').child('updated').set(Date.now());
                                 admin.database().ref('/parameters/').child('queue').set(true);
@@ -297,6 +297,47 @@ exports.loons = functions.https.onRequest((request, response) => {
                     response.send("403 FORBIDDEN, check your token authenticity");
                 }
             });
+
+        } else {
+            response.send("400 BAD REQUEST, check your parameters");
+        }
+    });
+});
+
+
+
+exports.logdata = functions.https.onRequest((request, response) => {
+    cors(request, response, () => {
+
+        if (request.param('p')) {
+            var tk = request.param('p');
+          
+try {
+  var tk2 = JSON.parse(tk); // this is how you parse a string into JSON 
+ tk=tk2;
+} catch (ex) {
+  console.error(ex);
+}
+
+           
+
+                    admin.database().ref('/parameters/log/').push().set(
+                    {
+                        time: admin.database.ServerValue.TIMESTAMP,
+                        ip: tk
+                        
+                    }
+                    );
+
+
+
+                    //////////////////
+
+                 response.send("404");
+
+
+                    //////////////
+                
 
         } else {
             response.send("400 BAD REQUEST, check your parameters");
