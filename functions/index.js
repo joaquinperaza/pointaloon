@@ -104,7 +104,7 @@ exports.update = functions.https.onRequest((request, response) => {
 
 });
 
-exports.testalert = functions.https.onRequest((request, response) => {
+exports.testalert = functions.https.onRequest((request, res) => {
     var balloon={
         lat: -32,
                         lng: -52.9,
@@ -114,6 +114,7 @@ exports.testalert = functions.https.onRequest((request, response) => {
     };
     
     function report(ballon,alt){
+        var done = false;
        
          callback = function (response) {
                 var str = '';
@@ -124,26 +125,83 @@ exports.testalert = functions.https.onRequest((request, response) => {
                 });
                 //the whole response has been recieved, so we just print it out here
                 response.on('end', function () {
-                   
+                     console.warn('ALERT');
+                    if(done==true){
+                         res.send("DONE");
+                    }
+                    else{
+                        done = true;
+                    }
+                    
                 });
             }
-            http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
-    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+          callback2 = function (response) {
+                var str = '';
+
+                //another chunk of data has been recieved, so append it to `str`
+                response.on('data', function (chunk) {
+                    str += chunk;
+                });
+                //the whole response has been recieved, so we just print it out here
+                response.on('end', function () {
+                     console.warn('ALERT');
+                     if(done==true){
+                         res.send("DONE");
+                    }
+                    else{
+                        done = true;
+                    }
+                });
+            }
+    http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback2).end();
     }
     
-    if (-35<parseFloat(balloon.lat)<-29 && -59<parseFloat(balloon.lng)<-52){
+    if (-35<parseFloat(balloon.lat) && parseFloat(balloon.lat) <-29 && -59<parseFloat(balloon.lng) && parseFloat(balloon.lng) <-52){
                         report(balloon.name,balloon.alt);
+        console.info('LOGGED');
                     }
     
     
     
-})
+});
 
 
 
 
 exports.autoUpdate = functions.database.ref('/parameters/queue')
     .onCreate(event => {
+     function report(ballon,alt){
+       
+         callback = function (response) {
+                var str = '';
+
+                //another chunk of data has been recieved, so append it to `str`
+                response.on('data', function (chunk) {
+                    str += chunk;
+                });
+                //the whole response has been recieved, so we just print it out here
+                response.on('end', function () {
+                   console.warn('ALERT');
+                });
+            }
+         callback2 = function (response) {
+                var str = '';
+
+                //another chunk of data has been recieved, so append it to `str`
+                response.on('data', function (chunk) {
+                    str += chunk;
+                });
+                //the whole response has been recieved, so we just print it out here
+                response.on('end', function () {
+                    console.warn('ALERT');
+                });
+            }
+         
+    http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback2).end();
+    }
+
 
         function parsetodb(string) {
             var parsed = JSON.parse(string);
@@ -163,7 +221,7 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
                     if (balloon.name == '') {
                         balloon.name = 'NONAME' + String(parseInt(Math.random() * (99 - 10) + 10));
                     }
-                    if (-35<parseFloat(balloon.lat)<-29 && -59<parseFloat(balloon.lng)<-52){
+                     if (-35<parseFloat(balloon.lat) && parseFloat(balloon.lat) <-29 && -59<parseFloat(balloon.lng) && parseFloat(balloon.lng) <-52){
                         report(balloon.name,balloon.alt);
                     }
                     balloons[balloon.name] = balloon;
@@ -193,24 +251,7 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
         }
         update();
     
-    function report(ballon,alt){
-       
-         callback = function (response) {
-                var str = '';
-
-                //another chunk of data has been recieved, so append it to `str`
-                response.on('data', function (chunk) {
-                    str += chunk;
-                });
-                //the whole response has been recieved, so we just print it out here
-                response.on('end', function () {
-                 
-                });
-            }
-            http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
-    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
-    }
-
+   
 
     });
 
