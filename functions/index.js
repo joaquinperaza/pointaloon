@@ -108,7 +108,8 @@ exports.testalert = functions.https.onRequest((request, response) => {
     var balloon={
         lat: -32,
                         lng: -52.9,
-                        alt: 2000
+                        alt: 2000,
+                      name: "HBAL001"
         
     };
     
@@ -123,10 +124,11 @@ exports.testalert = functions.https.onRequest((request, response) => {
                 });
                 //the whole response has been recieved, so we just print it out here
                 response.on('end', function () {
-                    parsetodb(str);
+                   
                 });
             }
             http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
     }
     
     if (-35<parseFloat(balloon.lat)<-29 && -59<parseFloat(balloon.lng)<-52){
@@ -135,7 +137,7 @@ exports.testalert = functions.https.onRequest((request, response) => {
     
     
     
-}
+})
 
 
 
@@ -202,10 +204,11 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
                 });
                 //the whole response has been recieved, so we just print it out here
                 response.on('end', function () {
-                    parsetodb(str);
+                 
                 });
             }
             http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    http.request('http://maker.ifttt.com/trigger/smsalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
     }
 
 
