@@ -30,7 +30,7 @@ Tokens without activity in a long time period will be deleted, calling /point pe
 ##### Point Antenna
 /point GET Request  
 
-<http://data.pointaloon.com/point?t=-KpXzvOkApAjugM8GgWe&lat=-5.4&lng=-80.7&alt=75>  
+<https://data.pointaloon.com/point?t=-KpXzvOkApAjugM8GgWe&lat=-5.4&lng=-80.7&alt=75>  
 
 Parameters required: 
 - t=API token  
@@ -43,13 +43,13 @@ Response: JSON with desired azimuth and altitude data for atenna in degrees, dis
 Example:  
 `{"ant_alt":-13.044651036040841, "ant_azm":314.3787496140375, "distance":2966056.5460053235, "loon":{"alt":15788.639494763536, "lat":-11.8075,"lng":-76.2704, "name":"HBAL941","seen":1500638350, "speed":15,"track":121}  
 }`   
+
 This also will update your token last activity.   
 For initial postioning you need to have a minimal connection to the network, the request size is as little as 500 bytes of data.  
-Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).
 ##### Get live Loon balloons status
 /loons GET Request  
 
-<http://data.pointaloon.com/loons?t=-KpXzvOkApAjugM8GgWe>  
+<https://data.pointaloon.com/loons?t=-KpXzvOkApAjugM8GgWe>  
 
 Parameters required: 
 - t=API token  
@@ -60,8 +60,8 @@ This also will update your token last activity.
 Example:  
 `{"HBAL020":{"alt":16093.439485009936,"lat":-6.3734,"lng":-78.456,"name":"HBAL020","seen":1500760514,"speed":7,"track":203}, "HBAL044":{"alt":17708.87943331586,"lat":-3.6557,"lng":-61.919,"name":"HBAL044","seen":1500760515,"speed":16,"track":119}, "HBAL051":{"alt":15819.119493788176,"lat":-0.478,"lng":37.6499,"name":"HBAL051","seen":1500760511,"speed":6,"track":270}...
 }`  
+
 This also will update your token last activity. 
-Note: to avoid CORS issues use https://us-central1-pointaloon.cloudfunctions.net/ instead of http://data.pointaloon.com/ (Due to firebase limitation allowing cors on redirects).
 
 ##### Force-update Loon data   
 ~~/update GET Request~~  
