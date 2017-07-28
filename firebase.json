@@ -3,31 +3,23 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public"
-      ,
-      
-      "headers": [ {
-  "source" : "/point",
-  "headers" : [ {
-    "key" : "Access-Control-Allow-Origin",
-    "value" : "*"
-} ]
-},{
-  "source" : "/test",
-  "headers" : [ {
-    "key" : "Access-Control-Allow-Origin",
-    "value" : "*"
-} ]
-}],
-    "redirects": [
-      {
-        "source": "/point",
-        "destination": "https://us-central1-pointaloon.cloudfunctions.net/point", 
-          "type": 301
-      }
-    ]
-      
-      
-      
+    "public": "public",
+
+    // Add the following rewrites section *within* "hosting"
+   "rewrites": [ {
+      "source": "/point", "function": "point"
+    },
+        {
+      "source": "/update", "function": "update"
+    }        ,
+                 {
+      "source": "/createToken", "function": "createToken"
+    }
+               , {
+      "source": "/loons", "function": "loons"
+    }
+               ]
+
   }
+}
 }

@@ -1,0 +1,74 @@
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDPfxUwejRuK71kdNxiFhu2q6dplAyNL-Q",
+    authDomain: "pointaloon.firebaseapp.com",
+    databaseURL: "https://pointaloon.firebaseio.com",
+    projectId: "pointaloon",
+    storageBucket: "pointaloon.appspot.com",
+    messagingSenderId: "171573965427"
+  };
+  firebase.initializeApp(config);
+</script>
+COPIAR
+Consulta estos recursos p
+
+<script>
+       
+  var config = {
+    apiKey: "AIzaSyBU4RD1ClAtCgHpRFIac8y1VVyQIeDsLKg",
+    authDomain: "contabilidad-peraza.firebaseapp.com",
+    databaseURL: "https://contabilidad-peraza.firebaseio.com",
+    projectId: "contabilidad-peraza",
+    storageBucket: "contabilidad-peraza.appspot.com",
+    messagingSenderId: "249983775892"
+  };
+  firebase.initializeApp(config);
+       
+    
+    function authenticate(){
+          
+      var email = document.querySelector('#ulogin').value;
+      var password = document.querySelector('#plogin').value;
+      var credential = firebase.auth.EmailAuthProvider.credential(email, password);
+      var auth = firebase.auth();
+      var currentUser = auth.currentUser;
+      err = 55;
+      auth.signInWithCredential(credential).catch(function(error) {
+             err=1;
+  // Handle Errors here.
+ console.log(error.code);
+ console.log(error.message);
+      if(error.code){  notify('Fallo el inicio de sesión, revise sus datos', 'inverse');
+ }
+      
+          
+  // ...
+});
+        
+         notify('Autenticando...', 'inverse');
+        
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {       notify('Autenticado!', 'inverse');
+   redirect('index.html')
+  } else {
+   //    notify('Fallo el inicio de sesión, revise sus datos', 'inverse');
+ 
+  
+  }
+});
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+  'size': 'invisible',
+  'callback': function(response) {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    onSignInSubmit();
+  }
+});
+
+
+    
+    }
+</script>
