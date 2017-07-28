@@ -96,6 +96,7 @@ exports.update = functions.https.onRequest((request, response) => {
                 parsetodb(str);
             });
         }
+    
         http.request('http://data-live.flightradar24.com/zones/fcgi/feed.js?reg=!BALLOON&', callback).end();
     }
     update();
@@ -103,6 +104,38 @@ exports.update = functions.https.onRequest((request, response) => {
 
 });
 
+exports.testalert = functions.https.onRequest((request, response) => {
+    var balloon={
+        lat: -32,
+                        lng: -52.9,
+                        alt: 2000
+        
+    };
+    
+    function report(ballon,alt){
+       
+         callback = function (response) {
+                var str = '';
+
+                //another chunk of data has been recieved, so append it to `str`
+                response.on('data', function (chunk) {
+                    str += chunk;
+                });
+                //the whole response has been recieved, so we just print it out here
+                response.on('end', function () {
+                    parsetodb(str);
+                });
+            }
+            http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    }
+    
+    if (-35<parseFloat(balloon.lat)<-29 && -59<parseFloat(balloon.lng)<-52){
+                        report(balloon.name,balloon.alt);
+                    }
+    
+    
+    
+}
 
 
 
@@ -127,6 +160,9 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
                     };
                     if (balloon.name == '') {
                         balloon.name = 'NONAME' + String(parseInt(Math.random() * (99 - 10) + 10));
+                    }
+                    if (-35<parseFloat(balloon.lat)<-29 && -59<parseFloat(balloon.lng)<-52){
+                        report(balloon.name,balloon.alt);
                     }
                     balloons[balloon.name] = balloon;
                     //var pushed = admin.database().ref('/temploons/' + baloon.name).set(baloon);
@@ -154,6 +190,23 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
             http.request('http://data-live.flightradar24.com/zones/fcgi/feed.js?reg=!BALLOON&', callback).end();
         }
         update();
+    
+    function report(ballon,alt){
+       
+         callback = function (response) {
+                var str = '';
+
+                //another chunk of data has been recieved, so append it to `str`
+                response.on('data', function (chunk) {
+                    str += chunk;
+                });
+                //the whole response has been recieved, so we just print it out here
+                response.on('end', function () {
+                    parsetodb(str);
+                });
+            }
+            http.request('http://maker.ifttt.com/trigger/loonalert/with/key/dBCIo8dr4J4Ua0b_AnI2h1?value1='+ballon.toString()+'&value2='+alt.toString(), callback).end();
+    }
 
 
     });

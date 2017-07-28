@@ -1,0 +1,24 @@
+[debug] [2017-07-28T04:16:46.855Z] ----------------------------------------------------------------------
+[debug] [2017-07-28T04:16:46.857Z] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2017-07-28T04:16:46.858Z] CLI Version:  3.9.1
+[debug] [2017-07-28T04:16:46.858Z] Platform:     darwin
+[debug] [2017-07-28T04:16:46.858Z] Node Version: v6.10.3
+[debug] [2017-07-28T04:16:46.859Z] Time:         Fri Jul 28 2017 01:16:46 GMT-0300 (-03)
+[debug] [2017-07-28T04:16:46.859Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-28T04:16:46.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-28T04:16:46.870Z] > authorizing via signed-in user
+[debug] [2017-07-28T04:16:46.872Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-28T04:16:46.872Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OT9LbbamLZFY6pDdmFzmCCRFulfVcoZzQYsI5N_L9D8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jul 28 2017 01:16:46 GMT-0300 (-03)
+[debug] [2017-07-28T04:16:47.952Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T04:16:47.960Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
+ Fri Jul 28 2017 01:16:47 GMT-0300 (-03)
+[debug] [2017-07-28T04:16:51.635Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T04:16:51.636Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
+ Fri Jul 28 2017 01:16:51 GMT-0300 (-03)
+[debug] [2017-07-28T04:16:53.168Z] <<< HTTP RESPONSE 200

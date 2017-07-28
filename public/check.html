@@ -1,4 +1,12 @@
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<button
+class="g-recaptcha"
+data-sitekey="6LcxzioUAAAAAJqo4o-Hcmgigto3uS97frAzWB-3"
+data-callback="myFn()"
+        id='button'>
+Submit
+</button>
 <script>
   // Initialize Firebase
   var config = {
@@ -11,25 +19,43 @@
   };
   firebase.initializeApp(config);
 </script>
-COPIAR
-Consulta estos recursos p
 
 <script>
-       
-  var config = {
-    apiKey: "AIzaSyBU4RD1ClAtCgHpRFIac8y1VVyQIeDsLKg",
-    authDomain: "contabilidad-peraza.firebaseapp.com",
-    databaseURL: "https://contabilidad-peraza.firebaseio.com",
-    projectId: "contabilidad-peraza",
-    storageBucket: "contabilidad-peraza.appspot.com",
-    messagingSenderId: "249983775892"
-  };
-  firebase.initializeApp(config);
-       
+
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('button', {
+  'size': 'invisible',
+  'callback': function(response) {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+   
+
+myFn();
+  }
+});
     
-    function authenticate(){
-          
-      var email = document.querySelector('#ulogin').value;
+    function myFn(){    var phoneNumber = '+59899355553';
+var appVerifier = window.recaptchaVerifier;
+firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+    .then(function (confirmationResult) {
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+    }).catch(function (error) {
+      // Error; SMS not sent
+      // ...
+    });
+        
+    }
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    /*      var email = document.querySelector('#ulogin').value;
       var password = document.querySelector('#plogin').value;
       var credential = firebase.auth.EmailAuthProvider.credential(email, password);
       var auth = firebase.auth();
@@ -59,16 +85,5 @@ firebase.auth().onAuthStateChanged(function(user) {
   
   }
 });
-
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': function(response) {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
-  }
-});
-
-
-    
-    }
+*/
 </script>
