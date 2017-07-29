@@ -44,7 +44,7 @@ exports.createToken = functions.https.onRequest((request, response) => {
 
 
         } else {
-            response.send("400 BAD REQUEST, check your parameters");
+            response.send("400 BAD REQUEST, check your parameters 😵😵😵");
 
         }
 
@@ -339,16 +339,16 @@ exports.point = functions.https.onRequest((request, response) => {
 
 
                     } else {
-                        response.send("400 BAD REQUEST, check your parameters and token authenticity");
+                        response.send("400 BAD REQUEST, check your parameters and token authenticity 😵😵😵");
                     }
                     //////////////
                 } else {
-                    response.send("403 FORBIDDEN, check your token authenticity");
+                    response.send("403 FORBIDDEN, check your token authenticity 😡😡😡");
                 }
             });
 
         } else {
-            response.send("400 BAD REQUEST, check your parameters");
+            response.send("400 BAD REQUEST, check your parameters 😵😵😵");
         }
     });
 });
@@ -391,12 +391,12 @@ exports.loons = functions.https.onRequest((request, response) => {
 
                     //////////////
                 } else {
-                    response.send("403 FORBIDDEN, check your token authenticity");
+                    response.send("403 FORBIDDEN, check your token authenticity 😡😡😡");
                 }
             });
 
         } else {
-            response.send("400 BAD REQUEST, check your parameters");
+            response.send("400 BAD REQUEST, check your parameters 😵😵😵");
         }
     });
 });
@@ -437,7 +437,7 @@ try {
                 
 
         } else {
-            response.send("400 BAD REQUEST, check your parameters");
+            response.send("400 BAD REQUEST, check your parameters 😵😵😵");
         }
     });
 });
