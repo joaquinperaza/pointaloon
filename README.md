@@ -12,6 +12,7 @@ Create API token for using Google Loon antenna tracker API.
 
 [Create in our website!](http://pointaloon.com)  
 
+or  
 
 /createToken GET Request  
 <https://data.pointaloon.com/createToken?email=mymail@mydomain.com>  
