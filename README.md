@@ -68,7 +68,7 @@ Refresh balloons database from flightradar24.com
 Deprecated since our server call it automatically.
 
 ### Further improvements:
-- Arduino code for a DIY Loon tracker
+- Arduino/raspberry code for a DIY Loon tracker
 - Guide for a simple Loon antenna tracker with Arduino
 - Hardware BOM suggestion
 - Ready to use solution kit
