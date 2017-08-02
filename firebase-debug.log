@@ -1,0 +1,409 @@
+[debug] [2017-08-02T14:57:58.320Z] ----------------------------------------------------------------------
+[debug] [2017-08-02T14:57:58.323Z] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2017-08-02T14:57:58.323Z] CLI Version:  3.9.1
+[debug] [2017-08-02T14:57:58.323Z] Platform:     darwin
+[debug] [2017-08-02T14:57:58.323Z] Node Version: v6.10.3
+[debug] [2017-08-02T14:57:58.324Z] Time:         Wed Aug 02 2017 11:57:58 GMT-0300 (-03)
+[debug] [2017-08-02T14:57:58.324Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-02T14:57:58.337Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-02T14:57:58.337Z] > authorizing via signed-in user
+[debug] [2017-08-02T14:57:58.339Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-02T14:57:58.339Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OT9LbbamLZFY6pDdmFzmCCRFulfVcoZzQYsI5N_L9D8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Aug 02 2017 11:57:58 GMT-0300 (-03)
+[debug] [2017-08-02T14:57:59.310Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:57:59.317Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pointaloon  
+ Wed Aug 02 2017 11:57:59 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:00.827Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:00.828Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pointaloon/tokens  
+ Wed Aug 02 2017 11:58:00 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:02.639Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'pointaloon'...
+[info] 
+[info] i  deploying functions
+[debug] [2017-08-02T14:58:07.388Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7",
+    "azimuth": "~0.1.0",
+    "cors": "~2.8.4"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-08-02T14:58:07.389Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Wed Aug 02 2017 11:58:07 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:07.390Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/pointaloon?view=CONSUMER_VIEW  
+ Wed Aug 02 2017 11:58:07 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:08.946Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-08-02T14:58:09.222Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-08-02T14:58:09.223Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/pointaloon  
+ Wed Aug 02 2017 11:58:09 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:09.224Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/pointaloon/apiKeys  
+ Wed Aug 02 2017 11:58:09 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:10.372Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:10.565Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2017-08-02T14:58:11.411Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/pointaloon/configs  
+ Wed Aug 02 2017 11:58:11 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:12.305Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (3.97 KB) for uploading
+[debug] [2017-08-02T14:58:13.340Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.pointaloon.appspot.com  
+ Wed Aug 02 2017 11:58:13 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:14.100Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:14.100Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.pointaloon.appspot.com/o?uploadType=media&name=firebase-functions-source ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 4066,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/var/folders/f3/f84x0w8s44dcrk_tk579_rjw0000gn/T/firebase-functions-61788D8R4YfA7Jaaj.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 4066 } 
+ Wed Aug 02 2017 11:58:14 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:15.348Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  starting release process (may take several minutes)...
+[debug] [2017-08-02T14:58:15.350Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions  
+ Wed Aug 02 2017 11:58:15 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.840Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function createToken...
+[debug] [2017-08-02T14:58:16.845Z] Trigger is: 
+[info] i  functions: updating function update...
+[debug] [2017-08-02T14:58:16.846Z] Trigger is: 
+[info] i  functions: updating function testalert...
+[debug] [2017-08-02T14:58:16.846Z] Trigger is: 
+[info] i  functions: updating function autoUpdate...
+[debug] [2017-08-02T14:58:16.846Z] Trigger is: 
+[info] i  functions: updating function point...
+[debug] [2017-08-02T14:58:16.847Z] Trigger is: 
+[info] i  functions: updating function loons...
+[debug] [2017-08-02T14:58:16.847Z] Trigger is: 
+[info] i  functions: updating function logdata...
+[debug] [2017-08-02T14:58:16.848Z] Trigger is: 
+[debug] [2017-08-02T14:58:16.849Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/createToken { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/createToken',
+  entryPoint: 'createToken',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.850Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/update { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/update',
+  entryPoint: 'update',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.851Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/testalert { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/testalert',
+  entryPoint: 'testalert',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.851Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/autoUpdate { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/autoUpdate',
+  entryPoint: 'autoUpdate',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  eventTrigger: 
+   { resource: 'projects/_/instances/pointaloon/refs/parameters/queue',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.create' } } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.852Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/point { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/point',
+  entryPoint: 'point',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.852Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/loons { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/loons',
+  entryPoint: 'loons',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:16.852Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions/logdata { sourceArchiveUrl: 'gs://staging.pointaloon.appspot.com/firebase-functions-source',
+  name: 'projects/pointaloon/locations/us-central1/functions/logdata',
+  entryPoint: 'logdata',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  httpsTrigger: {} } 
+ Wed Aug 02 2017 11:58:16 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.666Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.822Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.878Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.885Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.891Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.892Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.897Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:17.899Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/projects/pointaloon/locations/us-central1/functions  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.900Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.900Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.901Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.901Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.901Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.901Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:17.902Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:18.722Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.731Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.741Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.763Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.771Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.785Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.835Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:18.836Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:19.026Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:23.844Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.844Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.845Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.845Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.846Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.846Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:23.846Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:23 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:25.493Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.493Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.494Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.496Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.496Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.497Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.497Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:25.497Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:25.497Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:25.497Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:25.497Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:25.498Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:25.498Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:25.498Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:30.507Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.508Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.508Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.509Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.509Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.510Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:30.510Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:30 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:31.319Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.328Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.342Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.345Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.349Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.350Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.352Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:31.354Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:36.359Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.360Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.361Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.361Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.361Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.363Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:36.363Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:36 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:37.186Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.192Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.202Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.203Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.208Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.218Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.256Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:37.256Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:42.262Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.263Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.263Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.263Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.263Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.264Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.264Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:42 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:42.958Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.093Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.099Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.117Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.129Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.140Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.239Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:43.239Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:48.241Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.242Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.242Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.243Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.243Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.244Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.244Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:48 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:48.879Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:48.970Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.042Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.055Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.067Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.079Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.139Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:49.139Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:49.139Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is not done.
+[debug] [2017-08-02T14:58:49.140Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is not done.
+[debug] [2017-08-02T14:58:49.140Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:49.140Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:49.140Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:49.141Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is not done.
+[debug] [2017-08-02T14:58:54.146Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.149Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.149Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.149Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.150Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.150Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.150Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn  
+ Wed Aug 02 2017 11:58:54 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:54.798Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.806Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.821Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.827Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.947Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.968Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.990Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is not done.
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: update: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS91cGRhdGUvbmhUbTFlcHFmME0 is done.
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: testalert: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS90ZXN0YWxlcnQvMEhZaHNUSnY3Mlk is done.
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is not done.
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is not done.
+[debug] [2017-08-02T14:58:54.992Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:58:54.993Z] [functions] operation poll: logdata: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb2dkYXRhL2YwQktJcUlPWkJn is done.
+[debug] [2017-08-02T14:58:59.997Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ  
+ Wed Aug 02 2017 11:58:59 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:59.997Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF  
+ Wed Aug 02 2017 11:58:59 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:59.998Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ  
+ Wed Aug 02 2017 11:58:59 GMT-0300 (-03)
+[debug] [2017-08-02T14:58:59.999Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:58:59 GMT-0300 (-03)
+[debug] [2017-08-02T14:59:00.807Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:00.816Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:00.843Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:00.863Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:00.864Z] [functions] operation poll: createToken: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9jcmVhdGVUb2tlbi9YdHlTcksxbk9uVQ is done.
+[debug] [2017-08-02T14:59:00.864Z] [functions] operation poll: autoUpdate: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9hdXRvVXBkYXRlL25qRFV6TE90ZmpF is done.
+[debug] [2017-08-02T14:59:00.864Z] [functions] operation poll: point: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9wb2ludC9La2pkY1RnM3BJRQ is done.
+[debug] [2017-08-02T14:59:00.864Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:59:05.867Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:59:05 GMT-0300 (-03)
+[debug] [2017-08-02T14:59:06.747Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:06.747Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:59:11.752Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:59:11 GMT-0300 (-03)
+[debug] [2017-08-02T14:59:12.647Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:12.647Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:59:17.649Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:59:17 GMT-0300 (-03)
+[debug] [2017-08-02T14:59:18.657Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-02T14:59:18.657Z] [functions] operation poll: loons: update operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA is not done.
+[debug] [2017-08-02T14:59:23.658Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/cG9pbnRhbG9vbi91cy1jZW50cmFsMS9sb29ucy9vTk1IMnZoQ3BMOA  
+ Wed Aug 02 2017 11:59:23 GMT-0300 (-03)
