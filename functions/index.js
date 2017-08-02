@@ -414,11 +414,13 @@ try {
  tk=tk2;
 } catch (ex) {
   console.error(ex);
+     response.send("500 INTERNAL ERROR 😵😵😵");
 }
+            var uid = tk.name+Date.now().toString();
 
            
 
-                    admin.database().ref('/parameters/log/').push().set(
+                    admin.database().ref('/parameters/log/').child(uid).set(
                     {
                         time: admin.database.ServerValue.TIMESTAMP,
                         ip: tk
