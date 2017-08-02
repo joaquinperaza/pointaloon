@@ -416,7 +416,7 @@ try {
   console.error(ex);
      response.send("500 INTERNAL ERROR 😵😵😵");
 }
-            var uid = tk.countrCode+Date.now().toString();
+            var uid = tk.countryCode+Date.now().toString();
             tk['time'] = admin.database.ServerValue.TIMESTAMP;
 
            
