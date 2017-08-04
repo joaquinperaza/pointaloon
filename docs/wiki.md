@@ -1,6 +1,6 @@
 # Wiki
 
-## Point A Loon wiki
+## Point a Loon wiki
 
 ### Creating a token
 For using our API you need a token, you can get it by two different methods, the easiest is creating at [pointaloon.com](http://pointaloon.com/), if not you can do it by /createToken GET request:  
