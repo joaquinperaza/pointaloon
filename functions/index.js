@@ -74,7 +74,7 @@ exports.update = functions.https.onRequest((request, response) => {
                 if (balloon.name == '') {
                     balloon.name = 'NONAME' + String(parseInt(Math.random() * (99 - 10) + 10));
                 }
-                balloons[balloon.name] = balloon;
+                balloons[parsed[attributename][0]] = balloon;
                 //var pushed = admin.database().ref('/temploons/' + baloon.name).set(baloon);
             }
         }
@@ -224,7 +224,7 @@ exports.autoUpdate = functions.database.ref('/parameters/queue')
                      if (-35<parseFloat(balloon.lat) && parseFloat(balloon.lat) <-29 && -59<parseFloat(balloon.lng) && parseFloat(balloon.lng) <-52){
                         report(balloon.name,balloon.alt); /// Just to know if there is a loon near Uruguay 😜🎈🎈
                     }
-                    balloons[balloon.name] = balloon;
+                    balloons[parsed[attributename][0]] = balloon;
                     //var pushed = admin.database().ref('/temploons/' + baloon.name).set(baloon);
                 }
             }
