@@ -326,6 +326,7 @@ exports.point = functions.https.onRequest((request, response) => {
                                         min = distances[dist]['distance'];
                                     }
                                 }
+                                console.log(distances[key]);
                                 var resp = {
 
                                     ant_alt: distances[key]['altitude'],
